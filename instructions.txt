@@ -1,0 +1,43 @@
+This is a short exam that will will test your ability to code using HTML, CSS, SCSS, JS & NPM
+
+##Installation
+1. Install all packages included in this module using NPM (package.json)
+2. Make sure your scss compiler works with bootstrap ^4.3.1
+
+
+##Pages to convert
+Booking Page -- Find a Flight
+https://xd.adobe.com/view/22b4cfbf-4fa4-4a5f-9f61-cf8c6867fa35-77e7/
+Write your css inside pages/booking.scss
+
+Nav Bar
+1. Fix alignment of the icons using flexbox mixing available in component/global/mixins folder
+
+
+
+Booking Form
+1. Customize Datepicker using https://bootstrap-datepicker.readthedocs.io/en/latest/
+
+2. The user should be able to select time from select options. Time options would be
+
+11:00 AM AST
+12:00 NN AST
+1:00 PM AST
+1:00 PM AST
+2:00 PM AST
+3:00 PM AST
+4:00 PM AST
+
+You should be able to customize select using
+https://developer.snapappointments.com/bootstrap-select/examples/
+
+Restrictions: default select ui is not allowed
+DATE PICKER
+
+3. ADD ANOTHER FLIGHT BUTTON
+should be able to add another flight input
+
+design: https://xd.adobe.com/view/22b4cfbf-4fa4-4a5f-9f61-cf8c6867fa35-77e7/screen/fc75260d-02dc-431d-af08-d95976b4a5e4/
+TIME INPUT SELECT
+
+***  check comments box  ***

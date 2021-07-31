@@ -1,0 +1,40 @@
+//overriding bootstrap theme colors
+$theme-colors: (
+  "primary": #fdbe13,
+  "secondary": #fcb200,
+  "success": #00BC00,
+  "light": #F4F5F7,
+  "danger": #E82600,
+  "accent": #0586fe,
+);
+
+//disabling default bootstrap box shadows 
+
+$enable-shadows: false;
+
+.btn{
+	border-radius: 0;
+}
+
+
+
+
+
+
+
+// @each $color,
+// $value in $theme-colors {
+//     .btn-ghost-#{$color} {
+//         border: solid 1px $value;
+//         background-color: transparent;
+//         color: $value;
+//         font-family: $Display-Semibold;
+//         &:hover{
+//         	background-color:  $value;
+//         	color: $white;
+//         }
+        
+//     }
+// }
+
+// ]

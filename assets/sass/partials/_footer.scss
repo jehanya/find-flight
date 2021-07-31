@@ -1,0 +1,23 @@
+.footer {
+    background: $black;
+    padding-top: $spacing-xxlg;
+    padding-bottom: torem(50);
+    margin-top: $spacing-xxlg;
+    line-height: 2;
+
+    &--copyright {
+        border-top: solid 1px #707070;
+        color: $white;
+        @include flexbox();
+        @include justify-content(space-between);
+        padding-top:$spacing-sm;
+    }
+
+    &--social {
+        @include flexbox();
+
+        a {
+            color: $white;
+        }
+    }
+}

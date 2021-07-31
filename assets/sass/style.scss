@@ -1,0 +1,52 @@
+//overrides
+//@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+
+/* import the necessary Bootstrap files */
+// @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+//overrides
+@import 'overrides/bootstrap';
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
+
+
+//global
+@import 'global/functions';
+@import 'global/typography';
+@import 'global/variables';
+
+@import 'global/mixins/flex';
+@import 'global/mixins/responsive';
+@import 'global/mixins/components';
+
+//overrides
+@import 'global/utils';
+
+
+
+//components - elements that may or may not be in all of the pages
+@import 'components/forms';
+@import 'components/modals';
+@import 'components/layout';
+
+
+//partials - elements that are part of all the pages
+
+@import 'partials/nav';
+@import 'partials/footer';
+@import 'partials/components';
+@import 'partials/buttons';
+@import 'partials/slider';
+
+
+//pages
+
+@import 'pages/blog';
+@import 'pages/booking';
+@import 'pages/about';

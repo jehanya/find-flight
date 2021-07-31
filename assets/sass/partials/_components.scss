@@ -1,0 +1,68 @@
+.testimony {
+    font-size: $h6;
+
+    .author {
+        position: relative;
+        @include flexbox();
+        @include align-items(center);
+        @include flex-direction(column);
+
+        &--photo {
+            width: $spacing-xxlg;
+            height: $spacing-xxlg;
+            border-radius: 50%;
+            display: block;
+
+            background: {
+                size: cover;
+                repeat: no-repeat;
+            }
+        }
+
+        &--name {
+            @include flexbox();
+            @include align-items(center);
+            @include flex-direction(row);
+
+            &:before {
+                content: "";
+                width: torem(77);
+                height: 2px;
+                display: block;
+                background: $primary-color;
+                margin-right: $spacing-xs;
+            }
+        }
+
+
+    }
+
+    &--popup {
+        text-align: left;
+        line-height: 1.56;
+        letter-spacing: -0.18px;
+    }
+}
+
+.titled {
+    &-list {
+        &--title {
+            line-height: 1.67;
+        }
+
+        &--list {
+            line-height: 2;
+        }
+    }
+    &-feature{
+    	max-width: torem(370);
+    	margin-bottom: $spacing-xlg;
+    	&--check{
+    		background: $primary-color;
+    		color: $white;
+    		border-radius:50%;
+    		font-size: $xxsmall;
+    		padding: torem(4);
+    	}
+    }
+ }

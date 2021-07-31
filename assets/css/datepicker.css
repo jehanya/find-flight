@@ -1,0 +1,29 @@
+
+
+.datepicker-days {
+   padding: 20px;
+}
+
+.datepicker table tr td.day {
+   padding: 5px;
+}
+
+.datepicker table tr td.day:hover {
+   background-color: rgb(173, 173, 173)(238, 238, 238);
+}
+
+.input-group-addon {
+   border: 1px solid#ced4da;
+   padding: 5px;
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
+   border-left: transparent;
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover {
+  background-image: linear-gradient(to bottom, rgb(238, 182, 79), #fdbe13);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,113 @@
+html,
+body {
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+//typography
+h1,
+.h1 {
+    font-size: $h1;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+}
+
+h2,
+.h2 {
+    font-size: $h2;
+    letter-spacing: -0.4px;
+    line-height: 1.25;
+}
+
+h3,
+.h3 {
+    font-size: $h3;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+}
+
+h4,
+.h4 {
+    font-size: $h4;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+
+}
+
+h5,
+.h5 {
+    font-size: $h5;
+    line-height: 1.25;
+     letter-spacing: -0.4px;
+
+}
+
+h6,
+.h6 {
+    font-size: $h6;
+    line-height: 1.25;
+     letter-spacing: -0.4px;
+
+}
+
+p {
+    font-size: $normal;
+    margin-bottom: 0rem;
+    line-height: 2;
+}
+
+label {
+    font-size: 1rem;
+}
+
+small,.small {
+    font-size: $small;
+    font-weight: normal;
+}
+
+b{
+    color: $primary-color;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none !important;
+   
+}
+
+
+.text{
+    &--spaced{
+        letter-spacing: 6px;
+    }
+}
+
+//weights
+.font-weight-lgt {
+    font-family: $pop-lgt;
+    font-weight: normal !important;
+}
+
+.font-weight-rgl {
+    font-family: $pop-rgl;
+    font-weight: normal !important;
+}
+
+.font-weight-md {
+    font-family: $pop-md;
+    font-weight: normal !important;
+}
+
+.font-weight-smb {
+    font-family: $pop-smb;
+    font-weight: normal !important;
+}
+
+.font-weight-bld {
+    font-family: $pop-bld;
+    font-weight: normal !important;
+}
+
+

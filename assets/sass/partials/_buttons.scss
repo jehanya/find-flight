@@ -1,0 +1,13 @@
+@each $color,
+$value in $theme-colors {
+    .btn-#{$color} {
+        border-radius:0;
+        padding-top: $spacing-sm;
+        padding-bottom: $spacing-sm;
+    }
+}
+
+
+.btn-primary{
+	color:$white;
+}

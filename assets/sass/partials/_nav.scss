@@ -1,0 +1,66 @@
+.menu {
+    &--bar {
+        height: $spacing-xxlg;
+
+        .phone-number {
+        	text-align: center;
+            span {
+                color: $accent-color;
+                letter-spacing: -0.42px;
+                font-size: $small;
+                font-family: $pop-smb;
+            }
+
+            a {
+                color: $primary-color;
+                display: block;
+                display: block;
+                width: max-content;
+            }
+        }
+        .social-icon{
+        	a{
+        		font-size: $normal;
+        		color: $black;
+        	}
+        }
+    }
+
+    &--link {
+        height: $spacing-lg;
+        @include flexbox();
+        @include align-items(center);
+        position: relative;
+
+        .humberger {
+            width: 26px;
+            height: 2px;
+            display: block;
+            background: $black;
+
+            @include flexbox();
+            @include align-items(stretch);
+            margin-right: $spacing-md;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 31px;
+                height: 2px;
+                background-color: $black;
+                top: 0;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 31px;
+                height: 2px;
+                background-color: $black;
+                bottom: 0;
+            }
+        }
+
+        color: $black;
+    }
+}

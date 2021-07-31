@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- FONTS -->
+    <!-- FONTS -->
+    <link rel="stylesheet" href="assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="assets/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/datepicker.css">
+    <!-- PLUG INS -->
+    <link rel="stylesheet" type="text/css" href="assets/node_modules/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/node_modules/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- PLUG INS -->
+    <title>Book a flight</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-light menu--bar">
+        <div class="container-fluid justify-content-between">
+            <a href="#" class="menu--link">
+                <span class="humberger"></span>
+                Menu
+            </a>
+            <div class="social-icon">
+                <a href="">
+                    <span class="fa-fw select-all fab mr-2"></span>
+                </a>
+                <a href="">
+                    <span class="fa-fw select-all fab"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <header class="header header--lg header--brushed d-flex align-items-center " style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/booking-header@3x.png'); background-size: cover;" >
+           <div class="container">
+               <div class="row">
+                   <div class="col-8">
+                       <div class="booking--form">
+                           <form>
+                               <div class="booking--nav nav nav-tabs" id="bookingTab" role="tablist">
+                                   <div class="booking--nav__item active" id="find-flight" data-toggle="tab" aria-selected="true">
+                                       <div class="booking--form__icon">
+                                           <img src="assets/images/find-flight.svg">
+                                       </div>
+                                       <label>Find a Flight</label>
+                                   </div>
+                                   <div class="booking--nav__item" id="available-flight" data-toggle="tab" aria-selected="false">
+                                       <div class="booking--form__icon">
+                                           <img src="assets/images/plane.svg">
+                                       </div>
+                                       <label>Flight is Available</label>
+                                   </div>
+                                   <div class="booking--nav__item" id="extras-flight" data-toggle="tab" aria-selected="false">
+                                       <div class="booking--form__icon">
+                                           <img src="assets/images/extras.svg">
+                                       </div>
+                                       <label>Additional Extras</label>
+                                   </div>
+                                   <div class="booking--nav__item" id="extras-flight" data-toggle="tab" aria-selected="false">
+                                       <div class="booking--form__icon">
+                                           <img src="assets/images/payment.svg">
+                                       </div>
+                                       <label>Information & Payment</label>
+                                   </div>
+                               </div>
+                               <div class="booking--content tab-content" id="bookingContent">
+                                   <div class="tab-pane show active" id="content-flight" role="tabpanel" aria-labelledby="content-flight">
+                                     <div class="container">
+                                         <div class="row">
+                                             <div class="col-md-6">
+                                                 <div class="form-group">
+                                                     <label>Date</label>
+                                                     <div class="input-group date" data-provide="datepicker">
+                                                         <input type="text" class="form-control">
+                                                         <div class="input-group-addon">
+                                                         <i style="color: #fdbe13;" class="far fa-calendar-alt"></i>
+                                                         </div>
+                                                      </div>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Time</label>
+                                                    <div class="input-group date" data-provide="datepicker">
+                                                       <input type="text" class="form-control">
+                                                       <div class="input-group-addon">
+                                                         <i style="color: #fdbe13;" class="far fa-clock"></i>
+                                                       </div>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                         </div>
+                                         <div class="row">
+                                          <div class="col-md-6">
+                                             <div class="form-group">
+                                                 <label>Flight Duration</label>
+                                                 <div class="input-group date" data-provide="datepicker">
+                                                    <input type="text" class="form-control">
+                                                    <div class="input-group-addon">
+                                                     <i style="color: #fdbe13;" class="far fa-calendar-alt"></i>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Age</label>
+                                                <div class="input-group date" data-provide="datepicker">
+                                                   <input type="text" class="form-control">
+                                                   <div class="input-group-addon">
+                                                     <i style="color: #fdbe13;" class="far fa-clock"></i>
+                                                   </div>
+                                               </div>
+                                            </div>
+                                        </div>
+                                         </div>
+                                     </div>  
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+                   <div class="col-4 text-left">
+                        <h1>Find a Flight</h1>
+                   </div>
+               </div>
+           </div>
+        </header>
+       
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-5 row align-items-center">
+                    <div class="col-md-5">
+                        
+                    </div>
+                    <div class="col-md-7">
+                        
+                    </div>
+                </div>
+                <div class="col-md-7  row justify-content-between pl-5 ml-4">
+                    <div class="col-5 text-white  text-uppercase font-weight-bld">
+                        <ul class="list-unstyled ">
+                            <li>
+                                <p class="small mb-1">Sample Address</p>
+                            </li>
+                            <li>
+                                <p class="small mb-1">Bourke NSW 2840</p>
+                            </li>
+                            <li>
+                                <a href="mailto:rosscow40@gmail.com" class="d-block text-white small">e: </a>
+                            </li>
+                            <li>
+                                <a href="" class="text-white small">Bourke Stays</a>
+                            </li>
+                            <li>
+                                <a href="tel:0414 645 271" class="d-block text-white small">t: 0414 786 312</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 text-uppercase font-weight-bld">
+                        <small class="text-primary">Our Company</small>
+                        <ul class="list-unstyled ">
+                            <li>
+                                <a href="" class="text-white small">Home</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-white small">About Us</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-white small">Blog</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-white small">Bourke Stays</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-white small">What to do in Bourke</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3 text-uppercase font-weight-bld">
+                        <small class="text-primary">Get in touch</small>
+                        <ul class="list-unstyled ">
+                            <li>
+                                <a href="" class="text-white small">Contact us</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-white small">bookings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer--copyright">
+                <p class="small font-weight-bld text-uppercase">Copyright © 2021 Farm. all rights reserved</p>
+                <div class="footer--social">
+                    <a href="">
+                    <span class="fa-fw select-all fab mr-2"></span>
+                    </a>
+                    <a href="">
+                        <span class="fa-fw select-all fab"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script type="text/javascript" src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/node_modules/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="assets/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="assets/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="assets/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>

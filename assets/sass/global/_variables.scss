@@ -1,0 +1,81 @@
+//typography variables
+$ahoyamigo: 'ahoyamigo';
+$pop:'Poppins';
+
+$pop-thn:#{$pop}   +' Thin';
+$pop-thni:#{$pop}  +' ThinItalic';
+$pop-xlgt:#{$pop}  +' ExtraLight';
+$pop-xlgti:#{$pop} +' ExtraLightItalic';
+$pop-lgt:#{$pop}   +' Light';
+$pop-lgti:#{$pop}  +' LightItalic';
+$pop-rgl:#{$pop}   +' Regular';
+$pop-itl:#{$pop}   +' Italic';
+$pop-md:#{$pop}   +' Medium';
+$pop-mdi:#{$pop}   +' MediumItalic';
+$pop-smb:#{$pop}   +' SemiBold';
+$pop-smbi:#{$pop}  +' SemiBoldItalic';
+$pop-bld:#{$pop}   +' Bold';
+$pop-bldi:#{$pop}  +' BoldItalic';
+$pop-blk:#{$pop}   + " Black";
+$pop-blki:#{$pop}  +' BlackItalic';
+$pop-xbld:#{$pop}  +' ExtraBold';
+
+//font-family
+//weights
+
+
+//Primary colors
+
+$white          : #ffffff;
+$primary-color  : #fdbe13;
+$accent-color   : #0586fe;
+
+$text-primary   : #4d3d36; //primary text color
+$text-secondary : #cd6530; //primary text color
+$black          : #000000;
+$slate-grey     : #3e3e3e;
+$grey           : #d6d6d6;
+$dark-grey      : #818181;
+$light-grey     : #ededed;
+// Mood Colors
+
+ $success      : #03B825;
+// $danger: #e04551;
+// $warning: #ffde52;
+// $info: #4a73fa;
+
+
+//secondary colors
+
+
+
+
+//font-sizes:
+$basefont: 16;
+$h1    : #{80 / $basefont}rem;
+$h2    : #{60 / $basefont}rem;
+$h3    : #{35 / $basefont}rem;
+$h4    : #{30 / $basefont}rem;
+$h5    : #{20 / $basefont}rem;
+$h6    : #{18 / $basefont}rem;
+$normal: #{16 / $basefont}rem;
+$small : #{14 / $basefont}rem;
+$xsmall: #{12 / $basefont}rem;
+$xxsmall: #{10 / $basefont}rem;
+
+//spacing sizes
+
+$spacing-none: 0;
+$spacing-xs  : torem(5);
+$spacing-sm  : torem(10);
+$spacing-md  : torem(15);
+$spacing-lg  : torem(20);
+$spacing-xlg : torem(30);
+$spacing-xxlg: torem(60);
+$spacing-xxxlg: torem(100);
+
+
+
+//animation variable
+
+$cubic-bezier:  'cubic-bezier(0.6, -0.28, 0.74, 0.05)';

@@ -1,0 +1,64 @@
+.header {
+    margin-bottom: torem(85);
+
+    background: {
+        size: cover;
+    }
+
+    position: relative;
+
+    &--lg {
+        height: torem(755);
+    }
+
+
+    &--brushed {
+        &:before {
+            content: "";
+
+            background: {
+                image: url(../images/brushstroke-up@3x.png);
+                size: cover;
+            }
+
+            width: 100%;
+            height:$spacing-lg;
+            position: absolute;
+            top:0;
+        }
+
+        &:after {
+            content: "";
+
+            background: {
+                image: url(../images/brushstrokes@3x.png);
+                size: cover;
+            }
+
+            width: 100%;
+            height:$spacing-xlg;
+            position: absolute;
+            bottom:0;
+        }
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0 auto;
+        color: $white;
+        font-family: $pop-bld;
+        position: relative;
+
+        &:after {
+            content: "";
+            width: 11px;
+            height: 11px;
+            margin: 64px 0 25px;
+            background-color: $primary-color;
+            display: block;
+            position: absolute;
+            right: torem(-20);
+            bottom: 0;
+        }
+    }
+}
