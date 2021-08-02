@@ -1,7 +1,11 @@
 .booking {
    &--form {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: auto;
+      z-index: 100;
 
       &__icon {
          width: torem(66);
@@ -51,10 +55,18 @@
          }
       }
    }
+
+   &--form-container {
+      p {
+         font-size: 12px;
+         color:#fdbe13;
+         text-align: end;
+      }
+   }
 }
 
 .datepicker-days {
-   padding: 20px;
+   padding: 10px 20px;
 }
 
 .datepicker table tr td.day {
