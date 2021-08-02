@@ -30,7 +30,7 @@ class FormData {
 }
 
 let forms = []
-let id = forms.length + 1
+let id = 0
 const formsContainer = document.querySelector(".booking--form-container")
 
 let renderForm = () => {
@@ -53,7 +53,7 @@ let addForm = (input) => {
         <div class="form-group">
             <label>Flight Duration</label>
             <div class="input-group date" data-provider="datepicker">
-                <input type="text" class="form-control" value="${input.date}" id="date_text">
+                <input type="text" class="form-control" value="${input.date}" id="date_text" onchange="saveDate(${input.id}, this)">
                 <div class="input-group-addon">
                 <i style="color: #fdbe13;" class="far fa-calendar-alt"></i>
                 </div>
@@ -109,27 +109,24 @@ let addForm = (input) => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    let initialForm = new FormData(id)
-
-    forms.push(initialForm)
-    renderForm()
+    addFlight()
 })
 
 let addFlight = () => {
     id += 1
     let newForm = new FormData(id)
-    forms.push(newForm)
+    forms.splice(id, 1, newForm)
     renderForm()
+
+    console.log(forms)
 
     $(".date").datepicker({
         format: "DD - MM dd, yyyy",
     })
+}
 
-    $(".date")
-        .datepicker()
-        .on("changeDate", (e) => {
-            forms[id - 1].date = document.querySelector("#date_text").value
-        })
+let saveDate = (id, element) => {
+    forms[id - 1].date = element.value
 }
 
 let removeFlight = (inputID) => {
