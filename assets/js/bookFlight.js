@@ -83,8 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
    addFlight() // add first flight form at load
 })
 
+// Should be called everytime you introduce new data in forms array
 let renderForm = () => {
-   // clear everything inside formsContainer before redrawing everything based on formdata
+   // clear everything inside formsContainer before redrawing everything based on form data
    formsContainer.innerHTML = ``
 
    forms.forEach(formData => {
