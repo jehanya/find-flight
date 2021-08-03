@@ -1,16 +1,18 @@
+// ** Global data
 class FormData {
    constructor(id, date = "Tuesday, Aug 3, 2021", time = 3, duration = "30 mins", age = "30") {
-       this.id = id
-       this.date = date
-       this.time = time
-       this.duration = duration
-       this.age = age
+      this.id = id
+      this.date = date
+      this.time = time
+      this.duration = duration
+      this.age = age
    }
 }
 
-let forms = []
-let id = 0
+let forms = [] // where all created form data is saved
+let id = 0 // unique id assigned for every form added (even deleted ones)
 const formsContainer = document.querySelector(".booking--form-container")
+// **
 
 // Creating the Forms
 let addForm = (input) => {
@@ -77,49 +79,51 @@ let addForm = (input) => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-   addFlight()
+   addFlight() // add first flight form at load
 })
 
 let renderForm = () => {
-   formsContainer.innerHTML = ``
-   forms.forEach(element => {
-       addForm(element)
+   formsContainer.innerHTML = `` // clear everything inside formsContainer before redrawing everything based on formdata
+   forms.forEach(formData => {
+      addForm(formData) // add html forms using form data in each array (redraw everything)
 
-       $(".date").datepicker({
-           format: "DD - MM dd, yyyy",
-       })
-
-       if (formsContainer.firstElementChild.id == 1) {
-           $("#remove-flight-button").hide()
-       }
+      if (formsContainer.firstElementChild.id == 1) {
+         $("#remove-flight-button").hide() // first from cannot be removed
+      }
    });
+
+   $(".date").datepicker({
+      format: "DD - MM dd, yyyy",
+   }) // (why here?) to set format on each render because data is reset
 }
 
+// ** Form functions (called in html)
 let addFlight = () => {
-   id += 1;
+   id += 1; // unique id to each form added - should not change even after you delete other forms
    let newForm = new FormData(id)
-   forms.splice(forms.length, 1, newForm)
-   renderForm()
+   forms.splice(forms.length, 1, newForm) // add new form on forms array
+   renderForm() // forms array updated - requires redraw
 
    console.log(forms)
 }
 
-let saveDate = (id, element) => {
+let saveDate = (id, element) => { // when you change date in datepicker
    forms[findIndexByID(id)].date = element.value
 }
 
-let removeFlight = (id) => {
+let removeFlight = (id) => { // when you remove flight
    forms.splice(findIndexByID(id), 1)
-   renderForm()
+   renderForm() // removed item from forms array - requires redraw
 }
+// **
 
-let findIndexByID = (id) => {
+let findIndexByID = (id) => { // utility to find the right index of where the form is located in the array (using id)
    let elementIndex;
    forms.forEach((element, index) => {
-       if(element.id == id) {
-           elementIndex = index;
-       }
-   });
+      if (element.id == id) {
+         elementIndex = index;
+      }
+   }); 
 
    return elementIndex;
 }
