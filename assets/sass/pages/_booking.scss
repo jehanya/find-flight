@@ -1,10 +1,6 @@
 .booking {
    &--form {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: auto;
       z-index: 100;
 
       &__icon {
@@ -48,6 +44,8 @@
       backdrop-filter: blur(30px);
       background-color: #f7f7f7;
       background-color: rgba(255, 255, 255, 0.2);
+      overflow-y: auto;
+      max-height: 400px;
 
       .form-group {
          label {
@@ -59,7 +57,7 @@
    &--form-container {
       p {
          font-size: 12px;
-         color:#fdbe13;
+         color: #fdbe13;
          text-align: end;
       }
    }
@@ -89,10 +87,26 @@
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
-   background-image: linear-gradient(
-      to bottom,
-      rgb(238, 182, 79),
-      #fdbe13
-   );
+   background-image: linear-gradient(to bottom, rgb(238, 182, 79), #fdbe13);
    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* width */
+::-webkit-scrollbar {
+   width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: #555;
 }
