@@ -43,22 +43,23 @@
     }
 
     h1 {
-        text-align: center;
-        margin: 0 auto;
-        color: $white;
+        margin: 0 40px;
+        color: #d6d6d6;
         font-family: $pop-bld;
         position: relative;
+        @include align-self("flex-start");
+        z-index: 90;
 
         &:after {
+            position: absolute;
+            bottom: 0;
+            right: torem(40);
             content: "";
             width: 11px;
             height: 11px;
-            margin: 64px 0 25px;
+            margin: 64px 0 17px;
             background-color: $primary-color;
             display: block;
-            position: absolute;
-            right: torem(-20);
-            bottom: 0;
         }
     }
 }
