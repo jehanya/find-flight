@@ -1,4 +1,4 @@
-// ** Global data
+// *********** Global variables and consts
 class FormData {
    constructor(id, date = "Tuesday, Aug 3, 2021", time = 3, duration = "30 mins", age = "30") {
       this.id = id
@@ -12,9 +12,10 @@ class FormData {
 let forms = [] // where all created form data is saved
 let id = 0 // unique id assigned for every form added (even deleted ones)
 const formsContainer = document.querySelector(".booking--form-container")
-// **
+// ************
 
-// Creating the Forms
+
+// Create the Forms
 let addForm = (input) => {
    formsContainer.innerHTML += `
    <div id="${input.id}">
@@ -83,12 +84,15 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 let renderForm = () => {
-   formsContainer.innerHTML = `` // clear everything inside formsContainer before redrawing everything based on formdata
+   // clear everything inside formsContainer before redrawing everything based on formdata
+   formsContainer.innerHTML = ``
+
    forms.forEach(formData => {
-      addForm(formData) // add html forms using form data in each array (redraw everything)
+      // add html forms using form data in each array (redraw everything)
+      addForm(formData)
 
       if (formsContainer.firstElementChild.id == 1) {
-         $("#remove-flight-button").hide() // first from cannot be removed
+         $("#remove-flight-button").hide() // first form cannot be removed
       }
    });
 
@@ -97,27 +101,34 @@ let renderForm = () => {
    }) // (why here?) to set format on each render because data is reset
 }
 
-// ** Form functions (called in html)
+
+// ************** Form functions (called in html)
+// when you press add flight
 let addFlight = () => {
    id += 1; // unique id to each form added - should not change even after you delete other forms
    let newForm = new FormData(id)
-   forms.splice(forms.length, 1, newForm) // add new form on forms array
+   // add new form on forms array
+   forms.splice(forms.length, 1, newForm)
    renderForm() // forms array updated - requires redraw
 
    console.log(forms)
 }
 
-let saveDate = (id, element) => { // when you change date in datepicker
+// when you change date in datepicker
+let saveDate = (id, element) => { 
    forms[findIndexByID(id)].date = element.value
 }
 
-let removeFlight = (id) => { // when you remove flight
+// when you press remove flight
+let removeFlight = (id) => { 
    forms.splice(findIndexByID(id), 1)
    renderForm() // removed item from forms array - requires redraw
 }
-// **
+// ***************
 
-let findIndexByID = (id) => { // utility to find the right index of where the form is located in the array (using id)
+
+// utility to find the right index of where the form is located in the array (using id)
+let findIndexByID = (id) => {
    let elementIndex;
    forms.forEach((element, index) => {
       if (element.id == id) {
