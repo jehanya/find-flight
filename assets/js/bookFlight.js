@@ -2,7 +2,7 @@
 // $.fn.selectpicker.Constructor.BootstrapVersion = '4';
 
 class FormData {
-   constructor(id, date = "Tuesday, Aug 3, 2021", time = "2:00PM AST", duration = "30 mins", age = "30") {
+   constructor(id, date = "Tuesday, Aug 3, 2021", time = "2:00PM AST", duration = "30 minutes", age = "30") {
       this.id = id
       this.date = date
       this.time = time
@@ -56,8 +56,8 @@ let addForm = (input) => {
    <div class="col-md-6">
    <div class="form-group">
        <label>Flight Duration</label>
-       <div class="input-group" id="duration_input">
-           <select class="form-control" text="${input.id}">
+       <div class="input-group" >
+           <select class="form-control selectpicker" id="duration_input${input.id}" data="${input.id}">
                <option>30 minutes</option>
                <option>1 hour</option>
            </select>
@@ -125,6 +125,12 @@ let saveDate = (id, element) => {
 
 let saveTime = (id, value) => {
    forms[id].time = value
+   console.log("time is changed through bs select, time of form"  + id + " is now " + value )
+}
+
+let saveDuration = (id, value) => {
+   forms[id].duration = value
+   console.log("duration is changed through bs select, duration of form"  + id + " is now " + value )
 }
 
 // when you press remove flight
@@ -144,10 +150,15 @@ let updateIDs = () => {
 let updateSelectData = () => {
    forms.forEach((element, index) => {
       $('#time_input' + index).selectpicker('val', forms[index].time)
+      $('#duration_input' + index).selectpicker('val', forms[index].duration)
 
       $('#time_input' + index).on('changed.bs.select', (e) => {
          saveTime($('#time_input' + index).attr("data"), e.target.value)
-         console.log("time is changed through bs select, time of form"  + index + " is now " + e.target.value )
+         console.log(forms)
+      });
+
+      $('#duration_input' + index).on('changed.bs.select', (e) => {
+         saveDuration($('#duration_input' + index).attr("data"), e.target.value)
          console.log(forms)
       });
    });
