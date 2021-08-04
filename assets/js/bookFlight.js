@@ -1,6 +1,8 @@
 // *********** Global variables and consts
+// $.fn.selectpicker.Constructor.BootstrapVersion = '4';
+
 class FormData {
-   constructor(id, date = "Tuesday, Aug 3, 2021", time = 3, duration = "30 mins", age = "30") {
+   constructor(id, date = "Tuesday, Aug 3, 2021", time = "2:00PM AST", duration = "30 mins", age = "30") {
       this.id = id
       this.date = date
       this.time = time
@@ -34,8 +36,8 @@ let addForm = (input) => {
    <div class="col-md-6">
    <div class="form-group">
        <label>Time</label>
-       <div class="input-group" id="time_input" value="${input.time}">
-           <select class="form-control">
+       <div class="input-group">
+           <select class="form-control selectpicker" id="time_input${input.id}" data="${input.id}">
                <option>11:00AM AST</option>
                <option>12:00NN AST</option>
                <option>1:00PM AST</option>
@@ -55,7 +57,7 @@ let addForm = (input) => {
    <div class="form-group">
        <label>Flight Duration</label>
        <div class="input-group" id="duration_input">
-           <select class="form-control">
+           <select class="form-control" text="${input.id}">
                <option>30 minutes</option>
                <option>1 hour</option>
            </select>
@@ -69,7 +71,7 @@ let addForm = (input) => {
    <div class="form-group">
        <label>Age</label>
        <div class="input-group" id="age_input">
-           <input type="text" class="form-control" value="${input.age}">
+           <input type="text" class="form-control">
        </div>
    </div>
    </div>
@@ -84,26 +86,29 @@ document.addEventListener("DOMContentLoaded", () => {
 // ************** Form functions (called in html)
 // when you press add flight
 let addFlight = () => {
+   console.log("adding flight")
    let newForm = new FormData()
    // add new form on forms array
    forms.splice(forms.length, 1, newForm)
-   updateIDs()
+   updateIDs() // assign index as id's (still unique)
    renderForms() // forms array updated - requires redraw
 
+   console.log("form" + forms[forms.length - 1].id + " is loaded")
    console.log(forms)
+   updateSelectData()
 }
 
 // Should be called everytime you introduce new data in forms array
 let renderForms = () => {
    // clear everything inside formsContainer before redrawing everything based on form data
    formsContainer.innerHTML = ``
-
    forms.forEach(formData => {
       // add html forms using form data in each array (redraw everything)
       addForm(formData)
 
-      if (formsContainer.firstElementChild.id == 1) {
-         $("#remove-flight-button").hide() // first form cannot be removed
+      if (formsContainer.firstElementChild.id == 0) {
+         let el = document.getElementById("remove-flight-button")
+         el.style.visibility = "hidden"
       }
    });
 
@@ -113,14 +118,19 @@ let renderForms = () => {
 }
 
 // when you change date in datepicker
-let saveDate = (id, element) => { 
-   forms[id].date = element.value
+let saveDate = (id, element) => {
+   forms[id].date = element
+   console.log(element)
+}
+
+let saveTime = (id, value) => {
+   forms[id].time = value
 }
 
 // when you press remove flight
 let removeFlight = (id) => {
    forms.splice(id, 1)
-   updateIDs()
+   updateIDs() // assign index as id's (still unique)
    renderForms() // removed item from forms array - requires redraw
 }
 // ***************
@@ -129,4 +139,17 @@ let updateIDs = () => {
    forms.forEach((e, index) => {
       e.id = index
    })
+}
+
+let updateSelectData = () => {
+   forms.forEach((element, index) => {
+      $('#time_input' + index).selectpicker('val', forms[index].time)
+
+      $('#time_input' + index).on('changed.bs.select', (e) => {
+         saveTime($('#time_input' + index).attr("data"), e.target.value)
+         console.log("time is changed through bs select, time of form"  + index + " is now " + e.target.value )
+         console.log(forms)
+      });
+   });
+   console.log("re-set all values of time base on forms data")
 }
