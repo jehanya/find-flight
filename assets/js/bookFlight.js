@@ -2,7 +2,7 @@
 // $.fn.selectpicker.Constructor.BootstrapVersion = '4';
 
 class FormData {
-   constructor(id, date = "Tuesday, Aug 3, 2021", time = "2:00PM AST", duration = "30 minutes", age = "30") {
+   constructor(id = 0, date = "Tuesday, Aug 3, 2021", time = "2:00PM AST", duration = "30 minutes", age = "30") {
       this.id = id
       this.date = date
       this.time = time
@@ -26,7 +26,7 @@ let addForm = (input) => {
    <div class="form-group">
        <label>Flight Duration</label>
        <div class="input-group date" data-provider="datepicker">
-           <input type="text" class="form-control" value="${input.date}" id="date_text" onchange="saveDate(${input.id}, this)">
+           <input type="text" class="form-control" value="${input.date}" id="date_text${input.id}" onchange="saveDate(${input.id}, this)">
            <div class="input-group-addon">
            <i style="color: #fdbe13;" class="far fa-calendar-alt"></i>
            </div>
