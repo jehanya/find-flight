@@ -119,7 +119,7 @@ let renderForms = () => {
 
 // when you change date in datepicker
 let saveDate = (id, element) => {
-   forms[id].date = element
+   forms[id].date = element.value
    console.log(element)
 }
 
@@ -138,6 +138,8 @@ let removeFlight = (id) => {
    forms.splice(id, 1)
    updateIDs() // assign index as id's (still unique)
    renderForms() // removed item from forms array - requires redraw
+
+   updateSelectData()
 }
 // ***************
 
